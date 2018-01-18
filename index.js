@@ -1,0 +1,1 @@
+import { EventEmitterDOM } from './src/event-emitter-dom/event-emitter-dom';
