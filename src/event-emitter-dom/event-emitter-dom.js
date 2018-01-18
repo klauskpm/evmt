@@ -1,26 +1,27 @@
 export class EventEmitterDOM {
     constructor() {
-        this.subscriptions = {};
-        this.count = 0;
+        this.subscriptions = [];
     }
 
     emit(...args) {
-        for (var subscription in this.subscriptions) {
-            if (this.subscriptions.hasOwnProperty(subscription)) {
-                this.subscriptions[subscription].apply(null, args);
-            }
-        }
+        this.subscriptions.forEach(subscription => {
+            subscription(...args);
+        });
     }
 
     subscribe(callback) {
-        var index = this.count++;
-        var subscriptions = this.subscriptions;
-        var subscription = subscriptions[index] = callback;
+        const subscription = callback;
 
-        subscription.remove = function() {
-            delete subscriptions[index];
+        subscription.remove = () => {
+            this.remove(this.subscriptions.indexOf(subscription));
         };
 
+        this.subscriptions.push(subscription);
+
         return subscription;
+    }
+
+    remove(index) {
+        this.subscriptions.splice(index, 1);
     }
 }

@@ -28,8 +28,7 @@ var EventEmitterDOM = function () {
     function EventEmitterDOM() {
         classCallCheck(this, EventEmitterDOM);
 
-        this.subscriptions = {};
-        this.count = 0;
+        this.subscriptions = [];
     }
 
     createClass(EventEmitterDOM, [{
@@ -39,24 +38,29 @@ var EventEmitterDOM = function () {
                 args[_key] = arguments[_key];
             }
 
-            for (var subscription in this.subscriptions) {
-                if (this.subscriptions.hasOwnProperty(subscription)) {
-                    this.subscriptions[subscription].apply(null, args);
-                }
-            }
+            this.subscriptions.forEach(function (subscription) {
+                subscription.apply(undefined, args);
+            });
         }
     }, {
         key: "subscribe",
         value: function subscribe(callback) {
-            var index = this.count++;
-            var subscriptions = this.subscriptions;
-            var subscription = subscriptions[index] = callback;
+            var _this = this;
+
+            var subscription = callback;
 
             subscription.remove = function () {
-                delete subscriptions[index];
+                _this.remove(_this.subscriptions.indexOf(subscription));
             };
 
+            this.subscriptions.push(subscription);
+
             return subscription;
+        }
+    }, {
+        key: "remove",
+        value: function remove(index) {
+            this.subscriptions.splice(index, 1);
         }
     }]);
     return EventEmitterDOM;
