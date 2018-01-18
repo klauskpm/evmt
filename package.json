@@ -1,0 +1,22 @@
+{
+  "name": "event-emitter-dom",
+  "version": "1.0.0",
+  "description": "A helper class to send and receive events",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "start": "rollup -c -w"
+  },
+  "repository": "git@github.com:klauskpm/event-emitter-dom.git",
+  "author": "Klaus Kazlauskas <klausmachado@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "rollup": "^0.54.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-uglify": "^2.0.1"
+  }
+}
