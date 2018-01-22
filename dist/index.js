@@ -28,9 +28,15 @@ var EventEmitterDOM = function () {
     function EventEmitterDOM() {
         classCallCheck(this, EventEmitterDOM);
 
-        this.subscriptions = {};
-        this.count = 0;
+        this.subscriptions = [];
     }
+
+    /**
+     * Emits the arguments to all subscribed callbacks
+     *
+     * @param args {any} How many and of type you want
+     */
+
 
     createClass(EventEmitterDOM, [{
         key: "emit",
@@ -39,24 +45,44 @@ var EventEmitterDOM = function () {
                 args[_key] = arguments[_key];
             }
 
-            for (var subscription in this.subscriptions) {
-                if (this.subscriptions.hasOwnProperty(subscription)) {
-                    this.subscriptions[subscription].apply(null, args);
-                }
-            }
+            this.subscriptions.forEach(function (subscription) {
+                subscription.apply(undefined, args);
+            });
         }
+
+        /**
+         * Subscribes an callback to receive a future emit
+         *
+         * @param callback {Function} A callback
+         * @returns {Function}
+         */
+
     }, {
         key: "subscribe",
         value: function subscribe(callback) {
-            var index = this.count++;
-            var subscriptions = this.subscriptions;
-            var subscription = subscriptions[index] = callback;
+            var _this = this;
+
+            var subscription = callback;
 
             subscription.remove = function () {
-                delete subscriptions[index];
+                _this.remove(_this.subscriptions.indexOf(subscription));
             };
 
+            this.subscriptions.push(subscription);
+
             return subscription;
+        }
+
+        /**
+         * Removes the subscribed callback
+         *
+         * @param index {Integer} The callback/subscription index
+         */
+
+    }, {
+        key: "remove",
+        value: function remove(index) {
+            this.subscriptions.splice(index, 1);
         }
     }]);
     return EventEmitterDOM;

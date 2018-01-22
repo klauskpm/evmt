@@ -1,26 +1,43 @@
 export class EventEmitterDOM {
     constructor() {
-        this.subscriptions = {};
-        this.count = 0;
+        this.subscriptions = [];
     }
 
+    /**
+     * Emits the arguments to all subscribed callbacks
+     *
+     * @param args {any} How many and of type you want
+     */
     emit(...args) {
-        for (var subscription in this.subscriptions) {
-            if (this.subscriptions.hasOwnProperty(subscription)) {
-                this.subscriptions[subscription].apply(null, args);
-            }
-        }
+        this.subscriptions.forEach(subscription => {
+            subscription(...args);
+        });
     }
 
+    /**
+     * Subscribes an callback to receive a future emit
+     *
+     * @param callback {Function} A callback
+     * @returns {Function}
+     */
     subscribe(callback) {
-        var index = this.count++;
-        var subscriptions = this.subscriptions;
-        var subscription = subscriptions[index] = callback;
+        const subscription = callback;
 
-        subscription.remove = function() {
-            delete subscriptions[index];
+        subscription.remove = () => {
+            this.remove(this.subscriptions.indexOf(subscription));
         };
 
+        this.subscriptions.push(subscription);
+
         return subscription;
+    }
+
+    /**
+     * Removes the subscribed callback
+     *
+     * @param index {Integer} The callback/subscription index
+     */
+    remove(index) {
+        this.subscriptions.splice(index, 1);
     }
 }

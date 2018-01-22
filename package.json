@@ -4,7 +4,7 @@
   "description": "A helper class to send and receive events",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start",
     "build": "rollup -c",
     "start": "rollup -c -w"
   },
@@ -15,8 +15,19 @@
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
+    "jasmine-core": "^2.9.0",
+    "karma": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.1",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-rollup-preprocessor": "^5.1.1",
+    "karma-spec-reporter": "^0.0.32",
+    "karma-threshold-reporter": "^0.1.15",
     "rollup": "^0.54.1",
     "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-buble": "^0.18.0",
+    "rollup-plugin-istanbul": "^2.0.0",
     "rollup-plugin-uglify": "^2.0.1"
   }
 }
