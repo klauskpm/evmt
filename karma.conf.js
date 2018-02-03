@@ -28,10 +28,10 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     browsers: ['PhantomJS'],
     thresholdReporter: {
-      statements: 100,
-      branches: 100,
-      functions: 100,
-      lines: 100
+      statements: 80,
+      branches: 80,
+      functions: 80,
+      lines: 80
     },
     reporters: ['spec', 'threshold', 'coverage'],
     plugins: [
