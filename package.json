@@ -4,9 +4,15 @@
   "description": "A helper class to send and receive events",
   "main": "index.js",
   "scripts": {
-    "test": "karma start",
+    "dev": "rollup -c -w",
     "build": "rollup -c",
-    "start": "rollup -c -w"
+    "test": "karma start --single-run",
+    "test:watch": "karma start",
+    "lint": "standard",
+    "precommit": "npm run lint",
+    "prepush": "npm run test",
+    "prepublish": "npm run build",
+    "release": "np"
   },
   "repository": "git@github.com:klauskpm/event-emitter-dom.git",
   "author": "Klaus Kazlauskas <klausmachado@gmail.com>",
@@ -15,6 +21,7 @@
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
+    "husky": "^0.14.3",
     "jasmine-core": "^2.9.0",
     "karma": "^2.0.0",
     "karma-chrome-launcher": "^2.2.0",
@@ -28,6 +35,21 @@
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-buble": "^0.18.0",
     "rollup-plugin-istanbul": "^2.0.0",
-    "rollup-plugin-uglify": "^2.0.1"
+    "rollup-plugin-uglify": "^2.0.1",
+    "standard": "^10.0.3"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "it",
+      "beforeEach",
+      "expect",
+      "spyOn"
+    ],
+    "ignore": [
+      "/dist",
+      "/coverage",
+      "/node_modules"
+    ]
   }
 }
