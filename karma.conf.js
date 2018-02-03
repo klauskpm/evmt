@@ -21,7 +21,7 @@ module.exports = function (config) {
         format: 'cjs',            // Helps prevent naming collisions.
         name: 'event-emitter-dom',    // Required for 'iife' format.
         sourcemap: 'inline'        // Sensible for testing.
-      },
+      }
     },
     port: 9876,
     frameworks: ['jasmine'],
@@ -42,6 +42,6 @@ module.exports = function (config) {
       'karma-jasmine',
       'karma-threshold-reporter',
       'karma-rollup-preprocessor'
-    ],
+    ]
   })
 }

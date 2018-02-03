@@ -8,7 +8,7 @@
     "build": "rollup -c",
     "test": "karma start --single-run",
     "test:watch": "karma start",
-    "lint": "standard \"src/**/*.js\"",
+    "lint": "standard",
     "precommit": "npm run lint",
     "prepush": "npm run test",
     "prepublish": "npm run build",
@@ -21,6 +21,7 @@
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
+    "husky": "^0.14.3",
     "jasmine-core": "^2.9.0",
     "karma": "^2.0.0",
     "karma-chrome-launcher": "^2.2.0",
@@ -44,6 +45,11 @@
       "beforeEach",
       "expect",
       "spyOn"
+    ],
+    "ignore": [
+      "/dist",
+      "/coverage",
+      "/node_modules"
     ]
   }
 }
