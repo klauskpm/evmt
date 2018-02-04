@@ -6,7 +6,7 @@ export default class EventEmitterDOM {
   /**
    * Emits the arguments to all subscribed callbacks
    *
-   * @param args {any} How many and of type you want
+   * @param args {any} A list of values to be emitted
    */
   emit (...args) {
     this.subscriptions.forEach(subscription => {
@@ -17,7 +17,7 @@ export default class EventEmitterDOM {
   /**
    * Subscribes an callback to receive a future emit
    *
-   * @param callback {Function} A callback
+   * @param callback {Function} A function to handle the emitted event
    * @returns {Function}
    */
   subscribe (callback) {
@@ -34,7 +34,7 @@ export default class EventEmitterDOM {
   /**
    * Removes the subscribed callback
    *
-   * @param index {Integer} The callback/subscription index
+   * @param index {Number} The subscription index to be removed
    */
   remove (index) {
     this.subscriptions.splice(index, 1)
