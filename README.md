@@ -23,7 +23,7 @@ const animalGoes = (animal, sound) => {
   console.log(`${animal} goes ${sound}`)
   
   // Emits the params when the event occur
-  onAnimalGoes.emit(animal, sound);
+  onAnimalGoes.emit(animal, sound)
 }
 
 // Subscribes to the event
@@ -119,7 +119,7 @@ Subscribes an callback into an event to wait for the emit. It returns an "subscr
 const onSelect = new EventEmitterDOM()
 
 const subscription = onSelect.subscribe((param1, param2, param3, param4) => {
-  console.log(param1, param2, param3, param4);
+  console.log(param1, param2, param3, param4)
 })
 
 subscription.remove()
@@ -137,7 +137,7 @@ Removes the subscribed function from the subscriptions by it's index
 const onSelect = new EventEmitterDOM()
 
 const subscription = onSelect.subscribe((param1, param2, param3, param4) => {
-  console.log(param1, param2, param3, param4);
+  console.log(param1, param2, param3, param4)
 })
 
 // It's the same as subscription.remove()
