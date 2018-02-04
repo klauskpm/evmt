@@ -1,6 +1,6 @@
 {
   "name": "mitter",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Self contained event emitter",
   "main": "dist/index.min.js",
   "scripts": {
@@ -14,7 +14,12 @@
     "prepublish": "npm run build",
     "release": "np"
   },
-  "keywords": ["event", "emitter", "event-emitter", "subscribe"],
+  "keywords": [
+    "event",
+    "emitter",
+    "event-emitter",
+    "subscribe"
+  ],
   "repository": "git@github.com:klauskpm/mitter.git",
   "author": "Klaus Kazlauskas <klausmachado@gmail.com>",
   "license": "MIT",
