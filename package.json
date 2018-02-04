@@ -15,7 +15,7 @@
     "release": "np"
   },
   "keywords": ["event", "emitter", "event-emitter", "subscribe"],
-  "repository": "git@github.com:klauskpm/event-emitter-dom.git",
+  "repository": "git@github.com:klauskpm/mitter.git",
   "author": "Klaus Kazlauskas <klausmachado@gmail.com>",
   "license": "MIT",
   "devDependencies": {
