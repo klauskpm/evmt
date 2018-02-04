@@ -1,4 +1,4 @@
-import { EventEmitterDOM } from './event-emitter-dom'
+import Mitter from './mitter'
 
 let onSelect
 let subscription1
@@ -19,17 +19,17 @@ const select = (...args) => {
   onSelect.emit(...args)
 }
 
-describe('EventEmitter', () => {
+describe('Mitter', () => {
   beforeEach(() => {
-    onSelect = new EventEmitterDOM()
+    onSelect = new Mitter()
   })
 
   it('should be defined', () => {
-    expect(EventEmitterDOM).toBeDefined()
+    expect(Mitter).toBeDefined()
   })
 
-  it('should be instance of EventEmitterDOM', () => {
-    expect(onSelect instanceof EventEmitterDOM).toBe(true)
+  it('should be instance of Mitter', () => {
+    expect(onSelect instanceof Mitter).toBe(true)
     expect(onSelect.subscriptions.length).toBe(0)
   })
 
@@ -44,7 +44,7 @@ describe('EventEmitter', () => {
       spyOn(callbacks, 'subscription1').and.callThrough()
       spyOn(callbacks, 'subscription2').and.callThrough()
 
-      onSelect = new EventEmitterDOM()
+      onSelect = new Mitter()
       subscriptionValue1 = null
       subscriptionValue2 = null
 
