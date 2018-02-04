@@ -1,0 +1,10 @@
+# Project files
+node_modules/
+coverage/
+src/
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
