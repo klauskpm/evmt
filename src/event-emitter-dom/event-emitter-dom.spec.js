@@ -1,4 +1,4 @@
-import { EventEmitterDOM } from './event-emitter-dom'
+import EventEmitterDOM from './event-emitter-dom'
 
 let onSelect
 let subscription1

@@ -2,7 +2,7 @@
   "name": "event-emitter-dom",
   "version": "1.0.0",
   "description": "A helper class to send and receive events",
-  "main": "index.js",
+  "main": "dist/index.min.js",
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
