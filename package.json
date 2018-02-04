@@ -1,7 +1,7 @@
 {
-  "name": "event-emitter-dom",
+  "name": "mitter",
   "version": "0.1.0",
-  "description": "A helper class to send and receive events",
+  "description": "Self contained event emitter",
   "main": "dist/index.min.js",
   "scripts": {
     "dev": "rollup -c -w",
@@ -14,6 +14,7 @@
     "prepublish": "npm run build",
     "release": "np"
   },
+  "keywords": ["event", "emitter", "event-emitter", "subscribe"],
   "repository": "git@github.com:klauskpm/event-emitter-dom.git",
   "author": "Klaus Kazlauskas <klausmachado@gmail.com>",
   "license": "MIT",

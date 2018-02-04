@@ -1,4 +1,4 @@
-export default class EventEmitterDOM {
+export default class Mitter {
   constructor () {
     this.subscriptions = []
   }

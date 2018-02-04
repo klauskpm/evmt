@@ -1,5 +1,5 @@
-# Event Emitter DOM
-Super simple event emitter
+# Mitter
+Self contained event emitter
 
 Communicate between layers of code without the worry to build a complex solution, thinking of depth, or event injection.
 
@@ -7,18 +7,18 @@ Communicate between layers of code without the worry to build a complex solution
 
 ### Install
 Using npm:  
-`npm install --save event-emitter-dom`
+`npm install --save mitter`
 
 Using yarn:  
-`yarn add event-emitter-dom`
+`yarn add mitter`
 
 ### Usage
 Basic concept
 ````javascript
-import EventEmitterDOM from 'event-emitter-dom'
+import Mitter from 'mitter'
 
 // Creating the event
-const onAnimalGoes = new EventEmitterDOM()
+const onAnimalGoes = new Mitter()
 const animalGoes = (animal, sound) => {
   console.log(`${animal} goes ${sound}`)
   
@@ -44,7 +44,7 @@ animalGoes('Cat', 'Bazinga')
 
 Advanced usage, with components
 ```javascript
-import EventEmitterDOM from 'event-emitter-dom'
+import Mitter from 'mitter'
 
 const AnimalListComponent = {
   select(animal) {
@@ -53,7 +53,7 @@ const AnimalListComponent = {
 }
 
 const AnimalService = {
-  onSelect: new EventEmitterDOM(),
+  onSelect: new Mitter(),
   select(animal) {
     console.log(`Selected ${animal}`)
     this.onSelect.emit(animal)
@@ -90,7 +90,7 @@ AnimalListComponent.select('bat')
 
 ## Documentation
 
-### EventEmitterDOM
+### Mitter
 It returns it's own instance which is used to subscribe to and emit events.
 
 #### `emit([arg1, ..., argN])`
@@ -102,7 +102,7 @@ Calls/emits each subscribed callback passing the parameters it received.
 
 ##### Example
 ```javascript
-const onSelect = new EventEmitterDOM()
+const onSelect = new Mitter()
 
 onSelect.emit(1, '2', { exp: 3 }, [4])
 ```
@@ -116,7 +116,7 @@ Subscribes an callback into an event to wait for the emit. It returns an "subscr
 
 ##### Example
 ```javascript
-const onSelect = new EventEmitterDOM()
+const onSelect = new Mitter()
 
 const subscription = onSelect.subscribe((param1, param2, param3, param4) => {
   console.log(param1, param2, param3, param4)
@@ -134,7 +134,7 @@ Removes the subscribed function from the subscriptions by it's index
 
 ##### Example
 ```javascript
-const onSelect = new EventEmitterDOM()
+const onSelect = new Mitter()
 
 const subscription = onSelect.subscribe((param1, param2, param3, param4) => {
   console.log(param1, param2, param3, param4)
