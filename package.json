@@ -1,6 +1,6 @@
 {
   "name": "event-emitter-dom",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A helper class to send and receive events",
   "main": "dist/index.min.js",
   "scripts": {
@@ -31,6 +31,7 @@
     "karma-rollup-preprocessor": "^5.1.1",
     "karma-spec-reporter": "^0.0.32",
     "karma-threshold-reporter": "^0.1.15",
+    "np": "^2.19.0",
     "rollup": "^0.54.1",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-buble": "^0.18.0",
