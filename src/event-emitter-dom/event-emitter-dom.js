@@ -21,15 +21,14 @@ export class EventEmitterDOM {
    * @returns {Function}
    */
   subscribe (callback) {
-    const subscription = callback
+    this.subscriptions.push(callback)
 
-    subscription.remove = () => {
-      this.remove(this.subscriptions.indexOf(subscription))
+    return {
+      remove: () => {
+        const index = this.subscriptions.indexOf(callback)
+        this.remove(index)
+      }
     }
-
-    this.subscriptions.push(subscription)
-
-    return subscription
   }
 
   /**
