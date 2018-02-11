@@ -12,6 +12,9 @@
     "precommit": "npm run lint",
     "prepush": "npm run test",
     "prepublish": "npm run build",
+    "update-coc": "weallbehave -o .",
+    "update-contrib": "weallcontribute -o .",
+    "update-help": "npm run update-coc && npm run update-contrib",
     "release": "np"
   },
   "keywords": [
@@ -43,7 +46,9 @@
     "rollup-plugin-buble": "^0.18.0",
     "rollup-plugin-istanbul": "^2.0.0",
     "rollup-plugin-uglify": "^2.0.1",
-    "standard": "^10.0.3"
+    "standard": "^10.0.3",
+    "weallbehave": "^1.2.0",
+    "weallcontribute": "^1.0.8"
   },
   "standard": {
     "globals": [
