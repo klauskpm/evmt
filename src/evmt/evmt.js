@@ -1,4 +1,4 @@
-export default class Mitter {
+export default class Evmt {
   constructor () {
     this.subscriptions = []
   }

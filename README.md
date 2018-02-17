@@ -1,4 +1,4 @@
-# Mitter
+# Evmt
 Self contained event emitter
 
 Communicate between layers of code without the worry to build a complex solution, thinking of depth, or event injection.
@@ -7,22 +7,16 @@ Communicate between layers of code without the worry to build a complex solution
 
 ### Install
 Using npm:  
-`npm install --save mitter`
-
-Using yarn:  
-`yarn add mitter`
+`npm install --save evmt`
 
 ### Usage
 Basic concept
 ````javascript
-import Mitter from 'mitter'
+import Evmt from 'evmt'
 
-// Creating the event
-const onAnimalGoes = new Mitter()
+const onAnimalGoes = new Evmt()
 const animalGoes = (animal, sound) => {
   console.log(`${animal} goes ${sound}`)
-  
-  // Emits the params when the event occur
   onAnimalGoes.emit(animal, sound)
 }
 
@@ -34,17 +28,17 @@ const subscription2 = onAnimalGoes.subscribe((animal, sound) => {
   console.log(`I like when the ${animal} goes ${sound}`)
 })
 
-animalGoes('Sheep', 'beep')
-// Removes the subscription when done with it
+
+animalGoes('Sheep', 'beep') // Emits to both subscribed functions
 subscription2.remove()
-animalGoes('Cow', 'meow')
+animalGoes('Cow', 'meow') // Emits to the first subscribed function
 subscription1.remove()
-animalGoes('Cat', 'Bazinga')
+animalGoes('Cat', 'Bazinga') // Emits but there is nothing to listen
 ````
 
 Advanced usage, with components
 ```javascript
-import Mitter from 'mitter'
+import Evmt from 'evmt'
 
 const AnimalListComponent = {
   select(animal) {
@@ -53,7 +47,7 @@ const AnimalListComponent = {
 }
 
 const AnimalService = {
-  onSelect: new Mitter(),
+  onSelect: new Evmt(),
   select(animal) {
     console.log(`Selected ${animal}`)
     this.onSelect.emit(animal)
@@ -90,7 +84,7 @@ AnimalListComponent.select('bat')
 
 ## Documentation
 
-### Mitter
+### Evmt
 It returns it's own instance which is used to subscribe to and emit events.
 
 #### `emit([arg1, ..., argN])`
@@ -102,7 +96,7 @@ Calls/emits each subscribed callback passing the parameters it received.
 
 ##### Example
 ```javascript
-const onSelect = new Mitter()
+const onSelect = new Evmt()
 
 onSelect.emit(1, '2', { exp: 3 }, [4])
 ```
@@ -116,7 +110,7 @@ Subscribes an callback into an event to wait for the emit. It returns an "subscr
 
 ##### Example
 ```javascript
-const onSelect = new Mitter()
+const onSelect = new Evmt()
 
 const subscription = onSelect.subscribe((param1, param2, param3, param4) => {
   console.log(param1, param2, param3, param4)
@@ -134,7 +128,7 @@ Removes the subscribed function from the subscriptions by it's index
 
 ##### Example
 ```javascript
-const onSelect = new Mitter()
+const onSelect = new Evmt()
 
 const subscription = onSelect.subscribe((param1, param2, param3, param4) => {
   console.log(param1, param2, param3, param4)

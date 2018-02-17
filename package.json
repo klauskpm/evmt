@@ -1,6 +1,6 @@
 {
-  "name": "mitter",
-  "version": "1.0.1",
+  "name": "evmt",
+  "version": "1.0.0",
   "description": "Self contained event emitter",
   "main": "dist/index.min.js",
   "scripts": {
