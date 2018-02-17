@@ -1,4 +1,4 @@
-import Mitter from './mitter'
+import Evmt from './evmt'
 
 let onSelect
 let subscription1
@@ -19,17 +19,17 @@ const select = (...args) => {
   onSelect.emit(...args)
 }
 
-describe('Mitter', () => {
+describe('Evmt', () => {
   beforeEach(() => {
-    onSelect = new Mitter()
+    onSelect = new Evmt()
   })
 
   it('should be defined', () => {
-    expect(Mitter).toBeDefined()
+    expect(Evmt).toBeDefined()
   })
 
-  it('should be instance of Mitter', () => {
-    expect(onSelect instanceof Mitter).toBe(true)
+  it('should be instance of Evmt', () => {
+    expect(onSelect instanceof Evmt).toBe(true)
     expect(onSelect.subscriptions.length).toBe(0)
   })
 
@@ -44,7 +44,7 @@ describe('Mitter', () => {
       spyOn(callbacks, 'subscription1').and.callThrough()
       spyOn(callbacks, 'subscription2').and.callThrough()
 
-      onSelect = new Mitter()
+      onSelect = new Evmt()
       subscriptionValue1 = null
       subscriptionValue2 = null
 

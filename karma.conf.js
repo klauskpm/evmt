@@ -19,7 +19,7 @@ module.exports = function (config) {
       ],
       output: {
         format: 'cjs',            // Helps prevent naming collisions.
-        name: 'mitter',    // Required for 'iife' format.
+        name: 'evmt',    // Required for 'iife' format.
         sourcemap: 'inline'        // Sensible for testing.
       }
     },
