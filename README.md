@@ -9,20 +9,14 @@ Communicate between layers of code without the worry to build a complex solution
 Using npm:  
 `npm install --save mitter`
 
-Using yarn:  
-`yarn add mitter`
-
 ### Usage
 Basic concept
 ````javascript
 import Mitter from 'mitter'
 
-// Creating the event
 const onAnimalGoes = new Mitter()
 const animalGoes = (animal, sound) => {
   console.log(`${animal} goes ${sound}`)
-  
-  // Emits the params when the event occur
   onAnimalGoes.emit(animal, sound)
 }
 
@@ -34,12 +28,12 @@ const subscription2 = onAnimalGoes.subscribe((animal, sound) => {
   console.log(`I like when the ${animal} goes ${sound}`)
 })
 
-animalGoes('Sheep', 'beep')
-// Removes the subscription when done with it
+
+animalGoes('Sheep', 'beep') // Emits to both subscribed functions
 subscription2.remove()
-animalGoes('Cow', 'meow')
+animalGoes('Cow', 'meow') // Emits to the first subscribed function
 subscription1.remove()
-animalGoes('Cat', 'Bazinga')
+animalGoes('Cat', 'Bazinga') // Emits but there is nothing to listen
 ````
 
 Advanced usage, with components
