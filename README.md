@@ -9,7 +9,6 @@ Communicate between layers of code without the worry to build a complex solution
 ## Quick start
 
 ### Install
-Using npm:  
 `npm install --save evmt`
 
 ### Usage
