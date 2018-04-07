@@ -1,6 +1,8 @@
 # Evmt
 Self contained event emitter
 
+[![Build Status](https://travis-ci.org/klauskpm/evmt.svg?branch=master)](https://travis-ci.org/klauskpm/evmt)
+
 Communicate between layers of code without the worry to build a complex solution, thinking of depth, or event injection.
 
 ## Quick start
