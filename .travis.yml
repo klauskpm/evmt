@@ -1,13 +1,18 @@
 language: node_js
 node_js:
-  - "7"
-
+- '8'
 cache:
   directories:
-    - "node_modules"
-
-
+  - node_modules
 before_script:
-  - npm run build
+- npm run build
 after_script:
-  - npm run test
+- npm run test
+deploy:
+  provider: npm
+  email: klausmachado@gmail.com
+  api_key:
+    secure: nFKE20aC7JLp0zFJ/2mNmX0nHyitGycby1JwsaZWofmWPaUqVdh0eVDIn+PA55TjVHD++ZOPUMFyoW2Q/V219c2NQWtlb6svPiSVL/HZkKuMPaxoMWJZO3oOVd0/NA5yRexbTGoninPZfv11TqoY4hu+Tqz69y4jfahsR0121oUsBnb151fzNc3ps6asL8Bo6gbZa2vrEVcj9iaopaSyxFqx9zsQym3rTS2k7DgkaRG3OopifCmJ9ulz403vcHF/FAIXAhsixUWsFuFg1NeFVcrFpL8MU/h6vMaMBYyMRa8+mjEqw/uVYaB0RWsMlHhgN24jZQPe3s6Ra7osw+Fo0+ogFXJWvppWb+6GXTv7Mc2X55OT+9C/FQoR+2Eh2JTxw/D+ysnhfCSdx6ad2g/jmI0/i9uJgIKqb7hinwoeR+vj/Rn5/OO0bCkppoMDnEI4BxgupK2SQH8evKLAfK7jW0/6dlxvYJ+vHQI9JdU4eqKqD2ocQD7a0iKEMStAn1kC+g5/JPdjRFhG9hXswh9juORT77zZkpj1DVUwY5jA1DgvTxFYorfesuDWh9S3t6IbboZtxgqoqeL96ycJhEhBHzaQW2Qu743i5DGy+HJpFKFbJqV15YMhe+CV3+HSLUoMcbt2oI9F7TuLASxN5cockQaKUXvTY5pz2VLIQ14Ne9I=
+  on:
+    tags: true
+    repo: klauskpm/evmt
