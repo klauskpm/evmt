@@ -4,6 +4,8 @@ node_js:
 cache:
   directories:
   - node_modules
+before_install:
+  - yarn add --dev rollup
 before_script:
 - npm run build
 after_script:

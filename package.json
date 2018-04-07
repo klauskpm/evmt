@@ -5,7 +5,7 @@
   "main": "dist/index.min.js",
   "scripts": {
     "dev": "rollup -c -w",
-    "build": "./node_modules/rollup/bin/rollup -c",
+    "build": "rollup -c",
     "test": "karma start --single-run",
     "test:watch": "karma start",
     "lint": "standard",
