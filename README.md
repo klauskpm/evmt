@@ -2,6 +2,7 @@
 Self contained event emitter
 
 [![Build Status](https://travis-ci.org/klauskpm/evmt.svg?branch=master)](https://travis-ci.org/klauskpm/evmt)
+[![Coverage Status](https://coveralls.io/repos/github/klauskpm/evmt/badge.svg)](https://coveralls.io/github/klauskpm/evmt)
 
 Communicate between layers of code without the worry to build a complex solution, thinking of depth, or event injection.
 
