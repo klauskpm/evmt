@@ -4,8 +4,6 @@ node_js:
 cache:
   directories:
   - node_modules
-#before_deploy:
-#- yarn global add rollup rollup-plugin-babel rollup-plugin-uglify
 before_script:
 - npm run build
 after_script:
@@ -14,7 +12,7 @@ deploy:
   provider: npm
   email: klausmachado@gmail.com
   api_key:
-    secure: C+WY2ZMGAspQtBuyjRfQa6j5UKvX2PwUSO+8kdDNserWxaatmMbyI3Cc+AKih7VPy/qYJJBqR0FWOocogCsjsgtthYjZlnE69UuHumG9UI649I4yQ+1xlC3z7+MxO6vqA5Ggq2A6qCOY7TrVoX8ReCzy16TlgodmvMCmfcq1iSe8DKsK1dDjPhFFFLMPRzcJwhuBe8SZm+OqACKo0h3I5dSh3njfWJTZyPcJTot6EhxpyiONdjWW1EWRyARBXnVC8oe11rLw0sCIUynyEX9hJFn+8js3f+h4spk9qnGJOuG+Wjl9M0X9uRAT2y3ch1VJ5daPU5Cf+YNHMcbwtRN9Tb6G0khngshj6rJUpCIYe1/n5p1rJg2//A2xcJq+kYi8ybUcIZsPNDApdGC7amwPPQlyuFmass1kMfZjkXB7NQQLofA57V9KTwr8r0jM8S3Sfb0W3cFSsBKiEGMImtMjtcbX2FrR5ATzMc3pv9q0g5ml4cf2wpi1krhVupQeKqZ+/7SK8xxzflbL/fQimdVGGVzn1vY/YUudo0OgkIU8uiXXh8+HyY/2RY2fsioOFdloKzVABYYiEAobLljfsA1XiFyATqIsAom+mlTPBUD/E6xA1ucS+wpz1ezu6iP5cd8KN+8AGyCNI0/cR9NuynJVa5eg3cFbVj7hX4RZPS3cGpU=
+    secure: JoliHsiLMpDpYbae0Ahvhj7qcmVps0C426r9Bh7s3KemGBV09o34EgVbDfPNyNAKJswoXhKvtZdWxS2X5KDeLtzyfoNSnZ46/43Pun5+GAXDOaIFLy4AKdmP1tTzwhKaoCjhbPMML8SCk23hP3BrB+vJLIuZlMft9EkIubPpwgwjoYeadF+8lYXeBWRvvfmhgIqdc8dey/JEe+NOTH5+YgBWv5uu8FmBlXP5YwKJXNZ6RhvqEAamm7EDJTIFAggL556AUc+l+n40ZTZiKxH8nNvRakWvky0StZinHLsS6ggIJOW1hdZbuOVHb2T6Xu1L7hb63MF3u9glk1QK8SiO2TlzbKUp4gn1OOgycmZEq2kiEjLR7vfjiy/uuAjVfKX5VmLWIfXlUSpC2X/wKCXk8Zj0QgE6Igck+z+iWmfdmxeFV3S0C8ONSAZbOfqRVvzu+uQ0np1JJTL92aV8ZrpTHIGFc5VGpk5weEVW9nNZqVLWqVIevDAbI9KNbejGUfpkJG24+lYUlc+UjFsCIXLd2AQovgcv3uK39GTxCBd18DQfYZq8hHIAAESPeon3LVFHjjbEpzvA2S2P+/LCuHSAlSGj/ZU6u+5o06Z+Gb3cCpiSzwi45/QAPiokZlXF3LydPGRPQQaB4M5owuwJ6xfdAKOcSaoQUkoDU1DtOiYcDts=
   on:
     tags: true
     repo: klauskpm/evmt
