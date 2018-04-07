@@ -11,11 +11,9 @@
     "lint": "standard",
     "precommit": "npm run lint",
     "prepush": "npm run test",
-    "prepare": "npm run build",
     "update-coc": "weallbehave -o .",
     "update-contrib": "weallcontribute -o .",
-    "update-help": "npm run update-coc && npm run update-contrib",
-    "release": "np"
+    "update-help": "npm run update-coc && npm run update-contrib"
   },
   "keywords": [
     "event",

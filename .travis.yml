@@ -4,8 +4,8 @@ node_js:
 cache:
   directories:
   - node_modules
-before_deploy:
-- yarn global add rollup rollup-plugin-babel rollup-plugin-uglify
+#before_deploy:
+#- yarn global add rollup rollup-plugin-babel rollup-plugin-uglify
 before_script:
 - npm run build
 after_script:
