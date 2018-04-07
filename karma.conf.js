@@ -23,6 +23,10 @@ module.exports = function (config) {
         sourcemap: 'inline'        // Sensible for testing.
       }
     },
+    coverageReporter: {
+      type: 'lcov', // lcov or lcovonly are required for generating lcov.info files
+      dir: 'coverage/'
+    },
     port: 9876,
     frameworks: ['jasmine'],
     logLevel: config.LOG_INFO,
@@ -33,12 +37,13 @@ module.exports = function (config) {
       functions: 80,
       lines: 80
     },
-    reporters: ['spec', 'threshold', 'coverage'],
+    reporters: ['spec', 'threshold', 'coverage', 'coveralls'],
     plugins: [
       'karma-phantomjs-launcher',
       'karma-chrome-launcher',
       'karma-spec-reporter',
       'karma-coverage',
+      'karma-coveralls',
       'karma-jasmine',
       'karma-threshold-reporter',
       'karma-rollup-preprocessor'
